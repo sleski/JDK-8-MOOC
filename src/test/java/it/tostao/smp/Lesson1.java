@@ -76,6 +76,8 @@ public class Lesson1 {
         "alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
 
     /* YOUR CODE HERE */
+    list.replaceAll(l -> l.toUpperCase());
+    list.forEach(l -> System.out.println(l));
   }
 
   /**
