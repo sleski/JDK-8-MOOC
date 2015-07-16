@@ -5,11 +5,10 @@
  */
 package it.tostao.smp;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import org.junit.Test;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author Speakjava (simon.ritter@oracle.com)
@@ -49,6 +48,9 @@ public class Lesson1 {
         "alpha", "bravo", "charlie", "delta", "echo", "foxtrot");
 
     /* YOUR CODE HERE */
+    StringBuffer b = new StringBuffer();
+    list.forEach(l -> b.append(l.charAt(0)));
+    System.out.println("result is : " + b.toString());
   }
 
   /**
@@ -57,10 +59,11 @@ public class Lesson1 {
    * Remove the words that have odd lengths from the list.
    */
   private void exercise2() {
-    List<String> list = new ArrayList<>(Arrays.asList(
-        "alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
+    List<String> list = new ArrayList<>(Arrays.asList("alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
 
     /* YOUR CODE HERE */
+    List<String> filteredList = list.stream().filter(l -> l.length() % 2 == 0).collect(Collectors.toList());
+    filteredList.forEach(fl -> System.out.println(fl));
   }
 
   /**
@@ -106,7 +109,8 @@ public class Lesson1 {
    *
    * @param args the command line arguments
    */
-  public static void main(String[] args) {
+  @Test
+  public void runThis() {
     Lesson1 lesson = new Lesson1();
     lesson.runExercises();
   }
