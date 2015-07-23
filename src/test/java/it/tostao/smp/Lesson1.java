@@ -93,7 +93,7 @@ public class Lesson1 {
     map.put("a", 1);
 
     StringBuffer buffer = new StringBuffer();
-    map.forEach((k,v) -> buffer.append(k).append(v).append("-"));
+    map.forEach((k, v) -> buffer.append(k).append(v).append("-"));
     System.out.println(buffer.toString());
   }
 
@@ -105,7 +105,10 @@ public class Lesson1 {
   private void exercise5() {
     List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-    /* YOUR CODE HERE */
+
+    new Thread(
+            () -> list.forEach(System.out::println)
+    ).start();
   }
 
   /**
