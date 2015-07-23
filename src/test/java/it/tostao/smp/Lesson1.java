@@ -92,7 +92,9 @@ public class Lesson1 {
     map.put("b", 2);
     map.put("a", 1);
 
-    /* YOUR CODE HERE */
+    StringBuffer buffer = new StringBuffer();
+    map.forEach((k,v) -> buffer.append(k).append(v).append("-"));
+    System.out.println(buffer.toString());
   }
 
   /**
