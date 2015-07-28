@@ -13,6 +13,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -72,6 +73,8 @@ public class Lesson2 {
                 "The", "Quick", "BROWN", "Fox", "Jumped", "Over", "The", "LAZY", "DOG");
 
     /* YOUR CODE HERE */
+        List<String> filteredList = list.stream().filter(st -> (st.length() % 2) == 1).collect(Collectors.toList());
+        filteredList.forEach(fl -> System.out.println(fl));
     }
 
     /**
